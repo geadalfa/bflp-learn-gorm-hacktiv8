@@ -111,7 +111,7 @@ func createProduct(userId uint, brand string, name string) {
 
 func getUsersWithProducts() {
 	db := database.GetDB()
-	users := models.User{}
+	users := []models.User{}
 	err := db.Preload("Products").Find(&users).Error
 
 	if err != nil {
